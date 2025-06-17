@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Primeiros passos com HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Primeiros passos com HTML</h1>
+        <hr>
+        <p>Exercício elaborado como desafio de conclusão do módulo 1 do <i>Bootcamp de Frontend Santander 2025</i>. O objetivo é apresentar de maneira suscinta alguns conceitos básicos referentes ao HTML.</p>
+        <p><small><a href="https://github.com/digitalinnovationone/trilha-html-modulo-1/blob/main/README.md">Clique aqui</a> para ir ao repositório GitHub do desafio.</small></p>
+        <img src="images/notebook_white.jpg" alt="notebook branco" width="200">
+    </header>
+    <main>
+        <nav>
+            <h2>Índice</h2>
+            
+            <ul>
+                <li><a href="#computerHistory">História dos computadores</a></li>
+                <li><a href="#client">O que são <i>Clients</i>?</a></li>
+                <li><a href="#server">O que são <i>Servers</i>?</a></li>
+                <li><a href="#html">Como é uma estrutura básica de um HTML?</a></li>
+                <li><a href="#seo">O que é <i>SEO (Search Engine Optimization)</i>?</a></li>
+                <li><a href="#">Links de referências</a></li>
+            </ul>
+        </nav>
+
+        
+        <h2 id="computerHistory">História dos computadores</h2>
+        <p><strong>Computadores de 1ª geração</strong> <br><br>
+
+        .<a href="https://pt.wikipedia.org/w/index.php?fulltext=1&profile=default&search=harvard+mark+i&title=Especial%3APesquisar&ns0=1" target="_blank">Harvard Mark I (1944)</a> : eletro-mecânico. Já existiam modelos antes, mas este foi o que de fato foi criado para a realização de cálculos mais complexos. <br>
+        .<a href="https://pt.wikipedia.org/wiki/Colossus_(computador)" target="_blank">Colossus (1946)</a>: criado pela Alemanha para criptoanálises. Meados da segunda guerra mundial. <br>
+        .<a href="https://pt.wikipedia.org/wiki/ENIAC" target="_blank">ENIAC (1946)</a>: criado nos EUA. Mais automático que o Mark I. Origem do termo "bug": ele esquentava e atraía insetos para dentro do sistema, danificando-o. <br><br>
+
+        <strong>Computadores de 2ª geração (1959 a 1965)</strong>: Mudança das válvulas para os transistores, reduzindo o tamanho dos computadores. Para mais informações, <a href="https://agronomiaunimontes120172gblog.wordpress.com/2017/05/15/segunda-geracao-de-computadores/" target="_blank">clique aqui</a>. <br><br> 
+
+        
+
+        <strong>Computadores de 3º geração (1965 a 1970)</strong>: utilização dos circuitos integrados. Redução de tamanho ainda mais e aumentando a eficácia. Para mais informações, <a href="https://pt.wikipedia.org/wiki/Terceira_gera%C3%A7%C3%A3o_de_computadores" target="_blank">clique aqui</a>. <br><br>
+
+            .transistor <br>
+            .capacitor <br>
+            .resitor <br><br>
+
+        <strong>Computadores de 4ª geração (1971 aos dias de hoje)</strong>: personal computer (PC). Para mais informações, <a href=https://pt.wikipedia.org/wiki/Quarta_gera%C3%A7%C3%A3o_de_computadores target="_blank">clique aqui</a> <br><br> 
+
+            .criação do mouse (apple) <br>
+            .popularização do computador <br><br>
+
+        Computadores de 5ª geração: há quem diga também que etamos na 5ª geração, por conta dos computadors quânticos, as inteligências artificiais, criptomoedas, metaverso e etc</p>
+
+        <h2 id="client">O que são <i>Clients</i>?</h2>
+        <p>Cliente é quando você consome algo de algum lugar. Nesse caso, <i>client</i> vai ser <mark>o dispositivo que está consumindo conteúdo (informação)</mark> de um site hospedado na internet. <u>Hospedar um site</u> é colocar o seu arquivo de internet (arquivo do seu site) em algum servidor o qual pode retornar arquivos estáticos (a partir de sua solicitação): <br><br>
+
+	    .HTML <br>
+	    .CSS <br>
+	    .JavaScript <br>
+	    .Imagens <br>
+	    .etc <br></p>
+        
+
+        <h2 id="server">O que são <i>Servers</i>?</h2>
+        <p>Servidores são <mark>onde ficam armazenadas as informações</mark>. Eles não existem apenas na internet. Podem ser servidores locais. Tendem a ser um computadore mais robusto por necessitar de mais processamento devido às várias ligações que os mesmos têm que gerenciar. Tipos de servidores: <br><br>
+
+	        .arquivos: computador onde ficará centralizado as imagens, os áudios, os vídeos, que todo mundo pode acessar. <br>
+	        .segurança (firewall). <br>
+	        .streaming: dedicados a realizar o streaming de dados. Fornece dados à medida em que os usuários vão solicitando. <br>
+	        .email: vai armazenar e gerenciar os emails enviados e recebidos. <br>
+	        .web: fornece arquivos da internet (HTML, CSS, Javascript, imagens, vídeos, etc). <br><br>
+
+        Ainda importante mencionar que <i>datacenter</i> é o local onde ficam armazenados vários servidores</p>
+        
+
+        <h2>Como é uma estrutura básica de um HTML?</h2>
+        <p><h3>HTML</h3> 
+
+        Não é uma linguagem de programação e sim um arquivo de marcação. São textos delimitados por nomes que o navegador consegue interpretar. Cada nome destes delimitadores tem uma função e um comportamento específico (semântica). A mudança do HTML 4 para o HTML 5 trouxe um foco maior na semântica. Tira-se a função de formatação e fortalece a de estruturação (formatação -> css)
+    
+        Semântica é a: <blockquote cite="https://www.infopedia.pt/dicionarios/lingua-portuguesa/semantica">Disciplina da linguística que se ocupa da significação das palavras e expressões linguísticas bem como das relações de sentido que estas estabelecem entre si.</blockquote>
+ 
+        <h3 id="html"> Mudanças do HTML 5</h3> 
+        <h4>Estrutura básica</h4>
+
+	    <strong>Header</strong>:cabeçalho <br>
+
+	    <strong>Main</strong>: possui o conteúto principal da página. Tag principal. <br><br>
+
+            .Não pode (deve) ser filha de header ou footer <br>
+            .Só deve haver 1 (uma) por documento HTML <br>
+            .Não deverão incluir seções da página que sejam comuns a todo o site ou aplicação, tais como mecanismos de navegação (utilizar <u>nav</u>), informações de
+            copyright (<u>footer</u>), logotipo (<u>header</u>) ou campos de busca (utilizar <u>nav</u>. A não ser quer "Buscar" seja o objetivo principal do site. Ex.: google) <br><br>
+
+        <strong>Footer</strong>: informações de rodapé da página. <br><br>
+
+            .<strong>adress</strong>: tag de endereço. Por padrão, o texto fica em itálico <br><br>
+
+        
+        <h4>Outras tags</h4>
+        <strong>Section</strong>: representa uma seção genérica contida em um documento HTML, geralmente com um título, quando não existir um elemento semântico mais 
+        específico para representá-lo. Por exemplo, um menu de navegação deve estar dentro de um elemento <u>nav</u>, mas uma lista de resultados de pesquisa pode ser 
+        colocada numa <u>section</u>. <br><br>
+
+        <strong>Aside</strong>: assuntos que não têm ligação direta (tangencialmente relacionados) com o conteúdo da página. <br><br>
+
+        <strong>Nav</strong>: representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação. <br><br>
+
+        <strong>Article</strong> <br><br>
+
+            .<strong>time pubdate</strong>: tag semântica que especifica de quando é o artigo. <br>
+            .<strong>article</strong>: é possivel criar um dentro do outro. O buscador entenderá que se tratam de "pai" e "filho" (artigos correlacionados). <br><br>
+
+        <strong>Blockquote</strong>: tag para grande citação. Por padrão, desloca do resto do texto e aplica um recúo. <br>
+
+            .<strong>cite=""</strong>: especifica a fonte da citação (um link para um site, por exempo) <br><br>
+
+        <strong>q</strong>: tag para pequena citação. Por padrão, acrescenta aspas ao texto nela contido. <br><br>
+
+            .<strong>cite=""</strong>: especifica a fonte da citação (um link para um site, por exempo) <br><br>
+
+        <strong>Figure</strong>: funciona como um container que delimita o escopo de uma imagem (tag <u>img</u>). Tudo que estiver dentro se relaciona entre sim no âmbito de uma 
+        imagem. <br><br>
+
+            .<strong>figcaption</strong>: tag auxiliar que funciona como uma descrição para a imagem. É uma legenda ou descrição da imagem. É pública para todos 
+            verem (diferentemente do atributo "alt" em img). <br><br>
+
+        <strong>Picture</strong>: é possível utilizar múltiplas fontes para a mesma imagem. <br><br>
+
+            .<strong>source src=""</strong>: tag para indicar a fonte da imagem. <br>
+            .<strong>media="(min-width: 600px)"</strong>: atributo que indica que, se a tela tiver até 600px, será utilizada essa fonte (mobile first - media query css)
+            </p>
+        
+
+        <h2 id="seo">O que é <i>SEO (Search Engine Optimization)</i>?</h2>
+        <p> Otimização para Mecanismos de Buscas: conjunto de técnicas voltadas para otimizar o posicionamento do site em mecanismos de buscas
+
+	.visa melhorar o desmpenho do seu site para mecanismos de busca
+	.quanto menos <div> melhor, pois ele se torna mais fácil de indexar
+	.google ads: é o principal serviço de publiciade da google e principal fonte de receita desta empresa
+
+- Dicas para otimizar seu HTML para ele aparecer melhor nas buscas
+
+	.adicione títulos (tag title no head) que condizem com o conteúdo da sua página (entre 50 e 60 letras)
+	.adicione no head <meta name="description" content="PC gamer com 15% off no pix | Kabum!"/>
+	.ótima semântica no HTML (evitar <div>)
+	.estudar sobre schema.org: uma comunidade que se juntam para desenvolver formas de melhorar a forma como os dados são melhor colhidos pelos mecanismos de busca</p>
+        
+    </main>
+    <footer></footer>
+</body>
+</html>
