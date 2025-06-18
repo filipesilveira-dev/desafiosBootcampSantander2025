@@ -11,6 +11,36 @@ a { color:blue; text-decoration: none;}
     border-top: solid 1px #cdcdcd;
     border-bottom: solid 1px #cdcdcd;
 }
+
+#logo{
+    padding: 10px;
+    display: flex;    
+}
+
+#logo > a > img{
+    margin-right: 10px;
+}
+
+#logo > a > h2{
+    color: black;
+}
+
+picture{
+    display: flex;
+}
+
+picture > img{
+    width: 400px;
+    margin: auto;
+}
+
+#about{
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
 .content {
     max-width: 1440px;
     margin: auto;
