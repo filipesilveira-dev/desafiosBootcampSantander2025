@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+*{
+    font-family: ;
+}
+
+nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    
+    height: 56px;
+
+    padding-right: 24px;
+    padding-left: 24px;
+
+}
+
+#logo-youtube{
+    width: 90px;
+    height: 20px;
+    top: 18px;
+    left: 80px;
+}
+
+#logo-menu{
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    left: 24px;
+}
+
+#search-logo{
+    width: 57px;
+    height: 40px;
+    top: 8px;
+    left: 873px;
+    border-width: 1px;
+    background: #F8F8F8;
+    border: 1px solid #CCCCCC;
+    margin: 8px 0px;
+}
+
+#camera #notificatio{
+    width: 24px;
+    height: 24px;
+}
+
+#foto-filipe{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.container-logo{
+    display: flex;
+    justify-content: space-between;
+    width: 146px;
+    height: 24px;
+}
+
+.container-search-bar{
+    display: flex;
+}
+
+.container-search-bar > p{
+    width: 348px;
+    height: 40px;
+    top: 8px;
+    left: 526px;
+    border-width: 1px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin: 8px 0px;
+}
+
+.container-user{
+    display: flex;
+    justify-content: space-between;
+    width: 130px;
+    height: 34px;
+    gap: 24px;
+}
+
+#dio-img{
+    width: 952px;
+    height: 537px;
+}
+
+aside{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+aside > img{
+    width: 160px;
+    height: 90px;
+}
+
+.container-video{
+    display: flex;
+    flex-flow: row nowrap;
+}
