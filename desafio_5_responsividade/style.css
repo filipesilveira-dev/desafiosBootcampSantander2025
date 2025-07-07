@@ -13,7 +13,7 @@
 
 body{
     display: grid;
-    grid-template: 505px 573px 507px 560px 140px / repeat(1, 1fr);
+    grid-template: auto auto auto auto auto auto / repeat(1, 1fr);
 }
 
 .item{
@@ -87,6 +87,7 @@ header{
 .buttom-container{
     display: grid;
     grid-template-columns: 1fr 1fr; 
+    
 }
 
 #bt1{
@@ -106,6 +107,7 @@ header{
     opacity: 1;
     border-radius: 28px;
     border: none;
+    margin-right: 8px;
 }
 
 #bt2{
@@ -126,6 +128,7 @@ header{
     text-align: center;
     background: #23272A;
     color: #FFFFFF;
+    margin-left: 8px;
 
 }
 
@@ -230,12 +233,51 @@ header{
     letter-spacing: 0%;
 }
 
-.item4-text > h2{
+.item4-text{
+    width: 351px;
+    height: 234px;
+    angle: 0 deg;
+    opacity: 1;
+    color: #23272A;    
+}
 
+.item4-text > h2{
+    font-family: Open Sans;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 40px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
 }
 
 .item4-text > p{
-    
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.item4 > img{
+    width: 607px;
+    height: 394px;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+.item4{
+    width: 1280px;
+    height: 448px;
+    top: 1421px;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 16px;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .item5 > h1{
@@ -247,4 +289,60 @@ header{
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
+    width: 608px;
+    height: 80px;
+    angle: 0 deg;
+    opacity: 1;
+    
 }
+
+.item5 > p{
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 802px;
+    height: 44px;
+    angle: 0 deg;
+    opacity: 1;
+    
+}
+
+.item5 > img{
+    width: 784px;
+    height: 508px;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+.item5{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F6F6F6;
+    width: 1280px;
+    height: 744px;
+    top: 1909px;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+footer{
+    width: 1280px;
+    height: 134px;
+    top: 2658px;
+    angle: 0 deg;
+    opacity: 1;
+    background: #23272A;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
