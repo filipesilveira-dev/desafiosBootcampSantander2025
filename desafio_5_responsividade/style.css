@@ -9,9 +9,7 @@
     font-family: "Open Sans", sans-serif;
 }
 
-html{
-    height: 100vh;
-}
+
 
 body{
     display: grid;
@@ -19,8 +17,7 @@ body{
 }
 
 .item{
-    display: flex;
-    
+    display: flex;    
 }
 
 header{
@@ -184,6 +181,61 @@ header{
     leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 0%;
+}
+
+.item3{
+    width: 1280px;
+    height: 448px;
+    top: 933px;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 16px;
+    background: #F6F6F6;
+    justify-content: center;
+    align-items: center;
+}
+
+.item3 > img{
+    width: 607px;
+    height: 394px;
+    angle: 0 deg;
+    opacity: 1;
+
+}
+
+.item3-text{
+    width: 351px;
+    height: 212px;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+.item3-text > h2{
+    font-family: Open Sans;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 40px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.item3-text > p{
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.item4-text > h2{
+
+}
+
+.item4-text > p{
+    
 }
 
 .item5 > h1{
