@@ -21,7 +21,7 @@ body{
 }
 
 header{
-    width: 1280px;
+    width: 100vw;
     height: 459px;
     angle: 0 deg;
     opacity: 1;
@@ -143,13 +143,15 @@ header{
 }
 
 .item2{
-    width: 971px;
+    width: 100vw;
     height: 394px;
     top: 499px;
     left: 154px;
     angle: 0 deg;
     opacity: 1;
     gap: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
 .item2 > img{
@@ -163,7 +165,7 @@ header{
     width: 348px;
     height: 374px;
     angle: 0 deg;
-    opacity: 1;
+    opacity: 1;    
 }
 
 .item2-text > h2{
@@ -187,7 +189,7 @@ header{
 }
 
 .item3{
-    width: 1280px;
+    width: 100vw;
     height: 448px;
     top: 933px;
     angle: 0 deg;
@@ -269,7 +271,7 @@ header{
 }
 
 .item4{
-    width: 1280px;
+    width: 100vw;
     height: 448px;
     top: 1421px;
     angle: 0 deg;
@@ -324,7 +326,7 @@ header{
     justify-content: center;
     align-items: center;
     background: #F6F6F6;
-    width: 1280px;
+    width: 100vw;
     height: 744px;
     top: 1909px;
     angle: 0 deg;
@@ -335,7 +337,7 @@ header{
 }
 
 footer{
-    width: 1280px;
+    width: 100vw;
     height: 134px;
     top: 2658px;
     angle: 0 deg;
