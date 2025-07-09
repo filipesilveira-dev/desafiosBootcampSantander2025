@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sriracha&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+}
+
+
+
+header{
+    grid-area: header;
+    min-width: 100vw;    
+    opacity: 1;
+    background-image: url("/desafio_5_responsividade/images/Header\ Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+}
+
+.item1{
+     
+    width: 90vw;
+    height: 270px;
+    opacity: 1;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    
+}
