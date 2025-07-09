@@ -14,11 +14,22 @@ body, html{
     height: 100vh;
 }
 
-
+body{
+    display: grid;
+    grid-template: 31.5rem auto auto auto auto auto / 1fr;
+    grid-auto-flow: row;
+    grid-template-areas: 
+    "header"
+    "item2"
+    "item3"
+    "item4"
+    "item5"
+    "footer";
+}
 
 header{
     grid-area: header;
-    min-width: 100vw;    
+    width: 100vw;    
     opacity: 1;
     background-image: url("/desafio_5_responsividade/images/Header\ Background.png");
     background-size: cover;
@@ -28,14 +39,320 @@ header{
 }
 
 .item1{
-     
-    width: 90vw;
-    height: 270px;
-    opacity: 1;
-    gap: 24px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
+    width: 428px;
     
+    opacity: 1;    
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: auto;    
+}
+
+.item1 > h1{
+    width: 278px;
+    height: 4rem;
+    opacity: 1;
+    font-family: Luckiest Guy;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: 0%; 
+    color: #FFFFFF;
+}
+
+.item1 > p{
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 381px;
+    height: 8.25rem;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.buttom-container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    opacity: 1;
+    gap: 1rem;   
+}
+
+#bt1{
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #23272A;    
+    width: 24rem;
+    height: 3rem;
+    opacity: 1;
+    margin-bottom: .5rem;
+    border-radius: 28px;
+    border: none;
+}
+
+#bt2{
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    background: #23272A;
+    color: #FFFFFF;   
+    width: 24rem;
+    height: 3rem;
+    opacity: 1;
+    margin-top: .5rem;
+    border-radius: 28px;
+    border: none; 
+}
+
+#bt1:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.753);
+}
+
+#bt2:hover{
+    cursor: pointer;
+    background-color: #23272ad3;
+}
+
+.item2{
+    grid-area: item2;
+    width: 100vw;
+    height: 36rem;
+    opacity: 1;
+    padding-top: 40px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    gap: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item2 > img{
+    width: 379px;
+    height: 252px;
+    opacity: 1;
+
+}
+
+.item2-text{
+    width: 348px;
+    height: 374px;
+    opacity: 1; 
+    display: flex;
+    flex-direction: column;   
+    gap: 1.5rem;   
+}
+
+.item2-text > h2{
+    font-family: Open Sans;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 370px;
+    height: 99px;
+    opacity: 1;
+}
+
+.item2-text > p{
+   font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 378px;
+    height: 88px;
+    opacity: 1;
+
+}
+
+.item3{
+    grid-area: item3;
+    width: 100vw;
+    height: 32rem;
+    opacity: 1;
+    padding-top: 40px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    gap: 27px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    background: #F6F6F6;
+}
+
+.item3 > img{
+    width: 379px;
+    height: 252px;
+    opacity: 1;
+}
+
+.item3-text{
+    width: 348px;
+    height: 374px;
+    opacity: 1; 
+    display: flex;
+    flex-direction: column;   
+    gap: 1.5rem;   
+}
+
+.item3-text > h2{
+    font-family: Open Sans;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 1.5rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 379px;
+    height: 33px;    
+    opacity: 1;
+}
+
+.item3-text > p{
+   font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 378px;
+    height: 88px;
+    opacity: 1;
+}
+
+.item4{
+    grid-area: item4;
+    width: 100vw;
+    height: 32rem;
+    opacity: 1;
+    padding-top: 40px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    gap: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item4 > img{
+    width: 379px;
+    height: 252px;
+    opacity: 1;
+}
+
+.item4-text{
+    width: 348px;
+    height: 374px;
+    opacity: 1; 
+    display: flex;
+    flex-direction: column;   
+    gap: 1.5rem;   
+}
+
+.item4-text > h2{
+    font-family: Open Sans;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 1.5rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 373px;
+    height: 33px;
+    opacity: 1;
+}
+
+.item4-text > p{
+   font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 378px;
+    height: 88px;
+    opacity: 1;
+}
+
+.item5{
+    grid-area: item5;
+    width: 100vw;
+    height: 35rem;
+    opacity: 1;
+    padding-top: 40px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    gap: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F6F6F6;
+}
+
+.item5 > h1{
+    font-family: Luckiest Guy;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 376px;
+    height: 64px;
+    opacity: 1;    
+}
+
+.item5 > p{
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 378px;
+    height: 110px;
+    opacity: 1;    
+}
+
+.item5 > img{
+    width: 379px;
+    height: 252px;
+    opacity: 1;
+}
+
+footer{
+    grid-area: footer;
+    width: 100vw;
+    height: 140px;    
+    opacity: 1;
+    background: #23272A;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }
