@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
+
+:root {
+    --primary-color: #F0F0F0;
+
+    --primary-bg-color: #111217;
+    --secondary-bg-color: #28292E;
+    --border-color: #28292E;
+
+    --title-color: #9A9A9C;
+    --text-color: #9A9A9C;
+    --link-color: #9A9A9C;
+    --icon-color: #C7C8C9;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /*estabelece o tamanho total da caixa considerando o conteúdo, o padding e a borda. Isso possibilita que alterações em algum desses elementos não altere o tamanho total da caixa*/
+    vertical-align: baseline;
+    /*o baseline é especialmente importante quando você tem elementos de diferentes tamanhos na mesma linha e quer que eles se alinhem de forma natural com o texto, mantendo a legibilidade*/
+    list-style: none;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    /*Fonte importada do google fonts*/
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*Alinhamento no eixo Y*/
+    width: 100%;
+    /*Uso de unidade relativa referente ao container no qual está inserido*/
+    padding: .5rem 1rem;
+    /*em cima e embaixo (.5rem) e direita e esq (1rem). "rem" unidade de medida relativa ao tamanho de fonte estabelecido no navegador*/
+}
+
+.header__brand .brand__logo {
+    width: 3.25rem;
+    height: 3.25rem;
+    /*largura e altura obtidas por meio do projeto no figma. Unidade de medida relativa (responsividade)*/
+}
+
+#toggleTheme {
+    font-size: 1.5rem;
+    /*ícone entendido como fonte. Contrla seu tamanho*/
+    color: var(--primary-color);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    background: var(--primary-bg-color);
+}
+
+.menu__item {
+    width: 100%;
+}
+
+.menu--mobile {
+    width: 100vw;
+    /*Unidade de medida relativa. Garante cobrir a largura de toda a extensão da sua viewport, pois, diferentemente da porcentagem (que é relativa ao container no qual o elemento está inserido), a "vw" é referente ao tamanho de tela do navegador do usuário */
+    position: fixed;
+    /*estabelece, juntamente com a propriedade bottom, que esse elemento, o menu na versão mobile, ficará fixo no fundo da tela, independente do usuário subir e descer a tela*/
+    bottom: 0;
+    /*faz com que o menu fique no final da tela*/
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+}
+
+.menu--mobile .menu__link {
+    /*indica que o elemento com class=menu__link é filho do elemento com class=menu--mobile*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    gap: .5rem;
+}
+
+.menu__link.active .menu__icon,
+.menu__link.active .menu__text {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.menu__icon,
+.menu__text {
+    color: var(--text-color);
+}
+
+.menu__icon {
+    font-size: 1.5rem;
+}
+
+.menu__text {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+
+    /*Ajuste para tela de desktop utilizando o breakpoint de 768px. Isso significa que telas maiores que isso (ou minimamente com esse tamanho) executem os comando nesse escopo*/
+    .menu--mobile {
+        display: none;
+        /*estabelece que, quando a tela do usuário tiver no mínimo 768px (tamanho convencional de uma tela de desktop, o display será "none", ou seja, esse elemento não será mostrado*/
+    }
+}
