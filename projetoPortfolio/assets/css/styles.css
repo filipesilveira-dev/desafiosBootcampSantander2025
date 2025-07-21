@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
 
-:root {
+:root,
+:root[data-theme="dark"] {  /*Estabelece a paleta de cores do tema "dark". Referenciado na tag html.*/
     --primary-color: #F0F0F0;
 
     --primary-bg-color: #111217;
@@ -12,6 +13,41 @@
     --link-color: #9A9A9C;
     --icon-color: #C7C8C9;
 }
+
+:root[data-theme="light"] { /*Estabelece a paleta de cores do tema "light". Referenciado na tag html.*/
+    --primary-color: #0B0B0F;
+
+    --primary-bg-color: #E9E9E9;
+    --secondary-bg-color: #C7C8C9;
+    --border-color: #C7C8C9;
+
+    --title-color: #0B0B0F;
+    --text-color: #28292E;
+    --link-color: #28292E;
+    --icon-color: #56575A;
+}
+
+/*
+Inverte a cor da logo ao mudar para o modo "light"
+
+html[data-them='light'] .brand__logo{
+    filter: invert(1);
+
+    O filter em CSS é uma propriedade que permite aplicar efeitos visuais diretamente aos elementos, como se fossem filtros de um editor de imagens. Funciona de forma não-destrutiva, ou seja, não altera o arquivo original, apenas como ele é exibido.
+
+    Principais funções de filtro
+
+    blur(px) - Desfoque
+    brightness(%) - Brilho
+    contrast(%) - Contraste
+    saturate(%) - Saturação
+    hue-rotate(deg) - Rotação de matiz
+    grayscale(%) - Escala de cinza
+    sepia(%) - Efeito sépia
+    invert() - Inversão de cores
+    drop-shadow() - Sombra
+}
+*/
 
 * {
     margin: 0px;
@@ -45,6 +81,11 @@ a {
     /*em cima e embaixo (.5rem) e direita e esq (1rem). "rem" unidade de medida relativa ao tamanho de fonte estabelecido no navegador*/
 }
 
+.header__toggle {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header__brand .brand__logo {
     width: 3.25rem;
     height: 3.25rem;
@@ -55,6 +96,8 @@ a {
     font-size: 1.5rem;
     /*ícone entendido como fonte. Contrla seu tamanho*/
     color: var(--primary-color);
+    cursor: pointer;
+    transition: ease-in-out 1s;
 }
 
 .menu {
@@ -89,9 +132,12 @@ a {
 }
 
 .menu__link.active .menu__icon,
-.menu__link.active .menu__text {
+.menu__link.active .menu__text,
+.menu__link:hover .menu__icon,
+.menu__link:hover .menu__text {
     color: var(--primary-color);
     font-weight: 600;
+    /*Estabelece o comportamento das âncoras quando o cursor está em cima e quando são selecionadas. Comportamento presente tanto na versão mobile quanto na principal*/
 }
 
 .menu__icon,
@@ -108,11 +154,43 @@ a {
     text-transform: uppercase;
 }
 
+.header__nav {
+    display: none;
+}
+
+.menu--principal {
+    gap: 1rem;
+}
+
 @media (min-width: 768px) {
 
+    .header {
+        position: fixed;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 4rem;
+        background: var(--primary-bg-color);
+    }
+
     /*Ajuste para tela de desktop utilizando o breakpoint de 768px. Isso significa que telas maiores que isso (ou minimamente com esse tamanho) executem os comando nesse escopo*/
-    .menu--mobile {
+    .nav--mobile {
         display: none;
         /*estabelece que, quando a tela do usuário tiver no mínimo 768px (tamanho convencional de uma tela de desktop, o display será "none", ou seja, esse elemento não será mostrado*/
+    }
+
+    .header__nav {
+        display: flex;
+        /*Estabelece nesse tamanho de tela que o menu--principal deixa de ter a configuração "none" e passa a ser "flex" (passa a aparecer e a se comportar como flex)*/
+    }
+
+    .header__nav,
+    .header__toggle {
+        min-width: 30%;
+        /*Estabelece a menor largura possível que um elemento pode ter. É um limite inferior, ou seja, o elemento nunca fica menor que esse valor (mas pode ficar maior, se necessário.*/
+    }
+}
+
+@media(min-width: 1400px) {
+    .header {
+        padding: 1rem 15rem;
     }
 }
