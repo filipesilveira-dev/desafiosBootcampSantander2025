@@ -57,6 +57,10 @@ html[data-them='light'] .brand__logo{
 html[data-theme='light'] .technologies{
     filter: invert(1);
 }
+
+html[data-theme='light'] .technologies__logo{
+    filter: invert(80%);
+}
     
 * {
     margin: 0px;
@@ -355,6 +359,45 @@ main {
     height: 2rem;
 }
 
+.about__content2 .col1 .row1, .about__content2 .col1 .row2{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#accordion{
+    border-radius: .5rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+.accordion__header{
+    width: 100%;
+    display: flex;
+    padding: .75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--secondary-bg-color);
+    border: 1px solid var(--primary-border-color);
+}
+
+.accordion__header span{
+    color: var(--title-color);
+    font-size: 1.15rem;
+}
+
+.accordion__body{
+    display: none;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .625rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+.accordion__body.active .accordion__body{ /*Estrabelece que, quando estiver ativo (active), o accordion se comporte como "display: flex". Até então está como "none" para não apearecer em tela. Quando ativado, consequentmeente aparecerá.*/
+    display: flex;
+}
+
 footer {
     margin-bottom: 5rem;
 }
@@ -426,13 +469,33 @@ footer p {
         flex-direction: row;
     }
 
-    .projects__card.card__reverse{
+    .projects__card .card__reverse{
         flex-direction: row-reverse;
         justify-content: space-between;
     }
 
     .card__cover{
         width: 55%;
+    }
+
+    .about{
+        gap: 5rem;
+    }
+
+    .about__content1, .about__content2{
+        display: grid;
+        grid-template-columns: 34% 60%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .about__description h2{
+        text-align: left;
+    }
+
+    .description_buttons{
+        justify-content: flex-start;
     }
 }
 @media(min-width: 1200px) {
