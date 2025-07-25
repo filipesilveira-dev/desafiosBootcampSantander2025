@@ -247,7 +247,7 @@ p {
     background: transparent;
     border-radius: 3.125rem;
     border: none;
-    padding: .875tem 1.5rem;
+    padding: .875rem 1.5rem;
     transition: ease-in-out .3s;
     cursor: pointer;
     color: var(--primary-color);
@@ -390,6 +390,7 @@ main {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    
 }
 
 .card__buttons .btn {
@@ -413,7 +414,7 @@ main {
     height: 2rem;
 }
 
-pro .btn {
+.porjects .btn {
     width: auto;
     margin: auto;
 }
@@ -598,7 +599,7 @@ footer p {
         flex-direction: row;
     }
 
-    .projects__card .card__reverse {
+    .projects__card.card--reverse {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
