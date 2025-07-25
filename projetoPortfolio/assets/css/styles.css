@@ -504,7 +504,7 @@ main {
     border-radius: 0rem 0rem .25rem .25rem;
 }
 
-.accordion__item.active .accordion__item.end {
+.accordion__item.active .accordion__header.end {
     border-radius: 0;
 }
 
@@ -517,9 +517,13 @@ main {
     border: 1px solid var(--primary-border-color);
 }
 
-.accordion__body.active .accordion__body {
+.accordion__item.active .accordion__body {
     /*Estrabelece que, quando estiver ativo (active), o accordion se comporte como "display: flex". Até então está como "none" para não apearecer em tela. Quando ativado, consequentmeente aparecerá.*/
-    display: flex;
+    display: flex;    
+}
+
+.accordion__item.active .accordion__header {
+  background: var(--secondary-bg-color);
 }
 
 .accordion__item.active .bi-caret-down-fill {
