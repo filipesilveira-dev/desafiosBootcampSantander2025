@@ -38,3 +38,12 @@ accordionHeaders.forEach(header => {    //para cada "header" presente na lista d
         //se o "accordionActive" for verdadeiro, então é para remover o "active". Se for falso, é para adicionar um "active" como classe. Na prática e nesse projeto, isso significa que quando estiver com "active" o elemento em questão terá um comportamento estabelecido em css (display: flex), se não tiver com "active", "display: none". Com o javascript, é criado o evento de, ao clicar em determinado elemento, o "status" de ativo muda, alterando o comportamento dsse elemento.
     })
 })
+
+const menuLinks = document.querySelectorAll(".menu__link");
+
+menuLinks.forEach(item => {
+    item.addEventListener("click", () => {
+        menuLinks.forEach(i=> i.classList.remove("active"));
+        item.classList.add("active");
+    })
+})
