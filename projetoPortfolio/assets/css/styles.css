@@ -54,7 +54,7 @@ html[data-them='light'] .brand__logo{
 }
 */
 
-html[data-theme='light'] .technologies {
+html[data-theme='light'] .brand__logo {
     filter: invert(1);
 }
 
@@ -102,7 +102,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
     margin-bottom: .4rem;
 }
@@ -390,7 +390,7 @@ main {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    
+
 }
 
 .card__buttons .btn {
@@ -519,15 +519,37 @@ main {
 
 .accordion__item.active .accordion__body {
     /*Estrabelece que, quando estiver ativo (active), o accordion se comporte como "display: flex". Até então está como "none" para não apearecer em tela. Quando ativado, consequentmeente aparecerá.*/
-    display: flex;    
+    display: flex;
 }
 
 .accordion__item.active .accordion__header {
-  background: var(--secondary-bg-color);
+    background: var(--secondary-bg-color);
 }
 
 .accordion__item.active .bi-caret-down-fill {
     transform: rotate(180deg);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--primary-border-color);
+}
+
+.contact p {
+    text-align: center;
+}
+
+.contact .btn{
+    width: auto;
+}
+
+.contact .email{
+    text-transform: lowercase;
 }
 
 footer {
@@ -577,8 +599,12 @@ footer p {
     }
 
     main,
-    .projects {
+    .projects, .about {
         padding: 8rem 6rem 4rem 6rem;
+    }
+
+    .contact{
+        padding: 6rem;
     }
 
     .main__content1 {
@@ -671,27 +697,14 @@ footer p {
         height: 3rem;
     }
 
-    .projects__card {
-        display: flex;
-        flex-direction: row;
-    }
+   p, span, li {
+    font-size: 1.15rem;
+  }
 
-    .card__cover {
-        width: 50%;
-    }
-
-    .card__title {
-        font-size: 3.25rem;
-    }
-
-    .card__description,
-    .card__item {
-        font-size: 1.25rem
-    }
-
-    .card__buttons .btn {
-        width: auto;
-    }
+  .card__buttons .btn,
+  .description__buttons .btn {
+    width: auto;
+  }
 }
 
 @media(min-width: 1400px) {
@@ -715,7 +728,7 @@ footer p {
         padding: 12rem 15rem 2rem;
     }
 
-    .technologies {
+    .technologies, .projects, .about {
         padding: 10rem 15rem 4rem 15rem;
     }
 }
