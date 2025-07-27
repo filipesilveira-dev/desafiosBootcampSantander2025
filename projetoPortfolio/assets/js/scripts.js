@@ -17,11 +17,35 @@ function changeTheme() {
     //Alterna a classe bi-brightness-high no botão. Se a classe existir, remove; se não existir, adiciona.
     toggleTheme.classList.toggle("bi-sun");
     //Faz a mesma coisa com a classe bi-moon-stars (ícone de lua). Quando uma classe é adicionada, a outra é removida, criando o efeito visual de troca de ícones.
-    toggleTheme.classList.toggle("bi-moon-stars")
+    toggleTheme.classList.toggle("bi-moon-stars");
 }
 
 //"Escuta" o evento de clique no elemento toggleTheme. Quando o usuário clicar no botão, a função changeTheme será executada automaticamente.
-toggleTheme.addEventListener("click", changeTheme);
+toggleTheme.addEventListener("click", callFunctions);
+
+//Salvar tem preferido no LocalStorage
+function callFunctions(){
+    changeTheme();
+    saveToggle();
+}
+
+function saveToggle(){
+    const data = new toggleData(toggleTheme);  //pega todos os dados de "form"
+    const obj = Object.fromEntries(data);      //pega todas as entradas do formulário e transforma em um objeto só
+    localStorage.setItem('toggleInfo', JSON.stringify(obj));
+}
+
+function restoreToggle() {
+    const dados = localStorage.getItem('toggleInfo'); //pega o que foi salvo no localStorage
+    if (dados) {                                    //se retornar algum "dado", então...
+        const obj = JSON.parse(dados);              //converta o jason em objeto
+        for (let [name, value] of Object.entries(obj)) {    //para cada campo salvo, será preenchido com o valor. Ex: name="nome", valor="Filipe"
+            const campo = meuFormulario.querySelector(`[name="${name}"]`);  //procure o campo com o name = "name" (importância do name ser igual ao campo do nome?)
+            if (campo) campo.value = value; //vai retornar o valor do campo. Se campo for igual a "nome", vai retornar o valor do campo "nome" ("Filipe", no caso)
+              
+        }
+    }
+}
 
 
 //Interatividade na seção de Cursos
@@ -39,6 +63,7 @@ accordionHeaders.forEach(header => {    //para cada "header" presente na lista d
     })
 })
 
+//Mantém o link de menu selecionado destacado, desativando o anterior
 const menuLinks = document.querySelectorAll(".menu__link");
 
 menuLinks.forEach(item => {
@@ -47,3 +72,6 @@ menuLinks.forEach(item => {
         item.classList.add("active");
     })
 })
+
+
+const myToggle = document

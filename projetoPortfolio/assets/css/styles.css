@@ -250,7 +250,7 @@ p {
     padding: .875rem 1.5rem;
     transition: ease-in-out .3s;
     cursor: pointer;
-    color: var(--primary-color);
+    color: var(--primary-color);    
 }
 
 .btn:hover {
@@ -440,7 +440,7 @@ main {
     object-position: center;
     pointer-events: none;
     /* desabilita todas as interações do mouse com o elemento, fazendo com que ele se torne "transparente" para cliques e outros eventos de ponteiro*/
-    border-radius: 50rem;
+    border-radius: 50%;
     border: 1px solid var(--primary-border-color);
 }
 
@@ -568,7 +568,7 @@ footer p {
     .header {
         position: fixed;
         border-bottom: 1px solid var(--border-color);
-        padding: 1rem 4rem;
+        padding: 1rem 6rem;
         background: var(--primary-bg-color);
     }
 
@@ -590,12 +590,11 @@ footer p {
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     h2 {
         font-size: 3rem;
-        letter-spacing: .4rem;
     }
 
     main,
@@ -605,6 +604,10 @@ footer p {
 
     .contact{
         padding: 6rem;
+    }
+
+    .contact p{
+        width: 80%;
     }
 
     .main__content1 {
@@ -663,6 +666,10 @@ footer p {
 @media(min-width: 1200px) {
     h2 {
         font-size: 4rem;
+    }
+
+    h3{
+        font-size: 2.5rem;
     }
 
     main {
