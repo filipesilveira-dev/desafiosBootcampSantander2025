@@ -24,12 +24,12 @@ function changeTheme() {
 toggleTheme.addEventListener("click", callFunctions);
 
 //Salvar tem preferido no LocalStorage
-function callFunctions(){
+function callFunctions() {
     changeTheme();
     saveToggle();
 }
 
-function saveToggle(){
+function saveToggle() {
     const data = new toggleData(toggleTheme);  //pega todos os dados de "form"
     const obj = Object.fromEntries(data);      //pega todas as entradas do formulário e transforma em um objeto só
     localStorage.setItem('toggleInfo', JSON.stringify(obj));
@@ -42,7 +42,7 @@ function restoreToggle() {
         for (let [name, value] of Object.entries(obj)) {    //para cada campo salvo, será preenchido com o valor. Ex: name="nome", valor="Filipe"
             const campo = meuFormulario.querySelector(`[name="${name}"]`);  //procure o campo com o name = "name" (importância do name ser igual ao campo do nome?)
             if (campo) campo.value = value; //vai retornar o valor do campo. Se campo for igual a "nome", vai retornar o valor do campo "nome" ("Filipe", no caso)
-              
+
         }
     }
 }
@@ -68,7 +68,7 @@ const menuLinks = document.querySelectorAll(".menu__link");
 
 menuLinks.forEach(item => {
     item.addEventListener("click", () => {
-        menuLinks.forEach(i=> i.classList.remove("active"));
+        menuLinks.forEach(i => i.classList.remove("active"));
         item.classList.add("active");
     })
 })
