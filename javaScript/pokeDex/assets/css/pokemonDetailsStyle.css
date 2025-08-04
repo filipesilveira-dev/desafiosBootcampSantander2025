@@ -1,0 +1,129 @@
+/*Importando fonte Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: Roboto, Helvetica, sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    --normal: #a6a877;
+    --grass: #77c850;
+    --fire: #ee7f30;
+    --water: #678fee;
+    --eletric: #f7cf2e;
+    --ice: #98d5d7;
+    --ground: #dfbf69;
+    --flying: #a98ff0;
+    --poison: #a040a0;
+    --fighting: #bf3029;
+    --psychic: #f65687;
+    --dark: #725847;
+    --rock: #b8a137;
+    --bug: #a8b720;
+    --ghost: #6e5896;
+    --steel: #b9b7cf;
+    --dragon: #6f38f6;
+    --fairy: #f9aec7;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    border-radius: 25px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--grass);
+    margin: 0;
+    height: 40vh;
+}
+
+.content .pokemon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.content .pokemon .pokemonInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.content .pokemonNumber .number {
+    color: #fff;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.content .pokemonInfo .name {
+    color: #fff;
+    margin-bottom: .25rem;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.content .pokemonInfo .pokemonTypes {
+    color: #fff;
+}
+
+.content .pokemonImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .pokemonImage img {
+    /* O tamanho máximo da imagem vai ser 100% o tamanho do elemento no qual está contida (<li> no caso)*/
+    max-width: 100%;
+    height: 200px;
+    margin-top: 6.25rem;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin-top: 3.25rem;
+
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about .aboutHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.headingDescription {
+    display: flex;
+    flex-direction: column;
+}
+
+.breading{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.breading h2{
+    display: block;
+}
+
+.breading .breadingHeading{
+    display: flex;
+    flex-direction: column;
+}
+
+.breading .headingDescription{
+    display: flex;
+    flex-direction: column;
+}
