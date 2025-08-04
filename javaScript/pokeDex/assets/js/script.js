@@ -1,6 +1,11 @@
 // Arquivo destinado ao trecho de código que envolve a manipulação de elemetnos HTML
 
-/* Função destinada a converter os tupos de pokémon
+const pokemonList = document.getElementById('pokemonList')
+const loadMoreButton = document.getElementById('loadMoreButton')
+const limit = 5
+let offset = 0;
+
+/* Função destinada a converter os tipos de pokémon
  function convertPokemonTypesToLi(pokemonTypes) {
      return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`)
  }*/
@@ -23,8 +28,6 @@ function convertPokemonToLi(pokemon) {
 `
 }
 
-const pokemonList = document.getElementById('pokemonList')
-
 /*
  Instruções na liinha abaixo:
     1 - Foi requisitada via http a lista de pokémons (pokeApi.getPokemons())
@@ -35,10 +38,26 @@ const pokemonList = document.getElementById('pokemonList')
     6 - O resultado será um elemento HTML. Concatene no arquivo.html recebido pela variável 'pokemonList' (pokemonList.innerHTML +=). Obs: o '+=' implica que será adicionado um novo elemento preservando o que foi colocado antes
  */
 
-pokeApi.getPokemons().then((pokemons = []) => {
-    const newHtml = pokemons.map(convertPokemonToLi).join('')
-    pokemonList.innerHTML = newHtml
-})
+function loadPokemonItens(offset, limit){
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+        const newHtml = pokemons.map((pokemon) => `
+                <li class="pokemon ${pokemon.type}">
+                    <span class="number">${pokemon.number}</span>
+                    <span class="name">${pokemon.name}</span>
+
+                    <div class="detail">
+                        <ol class="types">
+                            ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                        </ol>
+
+                        <img src="${pokemon.photo}" alt="${pokemon.name}">
+                    </div>
+                </li>`
+        ).join('')
+
+        pokemonList.innerHTML += newHtml
+    })
+}
 
 /*
 Novas funcionalidades:
@@ -56,3 +75,10 @@ Novas funcionalidades:
  }
 
 console.log(listItems)*/
+
+loadPokemonItens(offset, limit)
+
+loadMoreButton.addEventListener('click', () => {
+    offset += limit
+    loadPokemonItens(offset, limit)
+})
