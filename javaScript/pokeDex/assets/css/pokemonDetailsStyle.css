@@ -5,6 +5,7 @@
     font-family: Roboto, Helvetica, sans-serif;
     box-sizing: border-box;
     list-style: none;
+    vertical-align: baseline;
 }
 
 :root {
@@ -31,7 +32,16 @@
 body {
     height: 100vh;
     margin: 0;
-    border-radius: 25px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.description{
+    height: 40%;
 }
 
 .content {
@@ -46,12 +56,18 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 .content .pokemon .pokemonInfo {
     display: grid;
     grid-template-columns: 1fr;
+}
+
+.content .pokemonNumber{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content .pokemonNumber .number {
@@ -68,6 +84,11 @@ body {
 }
 
 .content .pokemonInfo .pokemonTypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     color: #fff;
 }
 
@@ -75,6 +96,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 12.5rem;
 }
 
 .content .pokemonImage img {
@@ -87,43 +109,57 @@ body {
 
 .menu {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 0;
     margin-top: 3.25rem;
-
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 50px;
 }
 
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 60%;
 }
 
 .about .aboutHeading {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 1rem;
 }
 
 .headingDescription {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    font-weight: bold;
 }
 
 .breading{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 50%;
+    padding: 1rem;
 }
 
-.breading h2{
-    display: block;
+.breadingTitle{
+    padding-left: 1rem;
+    margin: 0;
 }
 
 .breading .breadingHeading{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .breading .headingDescription{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+    font-weight: bold;
 }
