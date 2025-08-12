@@ -19,15 +19,16 @@ const state = {
         player: document.getElementById("player-field-card"),
         computer: document.getElementById("computer-field-card"),
     },
+    playerSides: {
+        player1: "player-cards",
+        player1BOX: document.querySelector("#player-cards"),
+        computer: "computer-cards",
+        computerBOX: document.querySelector("#computer-cards"),
+    },
     actions: {
         button: document.getElementById("next-duel"),
     },
 }
-
-const playerSides = {
-    player1: "player-cards",
-    computer: "computer-cards",
-};
 
 // constante criada para facilitar a concatenação do caminho para as imagens das cartas
 const pathImages = "./src/assets/icons/"
@@ -80,10 +81,10 @@ async function createCardImage(IdCard, fieldSide) {
     cardImage.setAttribute("data-id", IdCard);
     cardImage.classList.add("card");
 
-    if (fieldSide === playerSides.player1) {
+    if (fieldSide === state.playerSides.player1) {
 
         cardImage.addEventListener("mouseover", () => {
-        drawSelectCard(IdCard);
+            drawSelectCard(IdCard);
         });
 
         cardImage.addEventListener("click", () => {
@@ -91,9 +92,72 @@ async function createCardImage(IdCard, fieldSide) {
         });
     }
 
-    
-
     return cardImage;
+}
+
+async function setCardsField(cardId) {
+
+    // remove todas as cartas antes
+    await removeAllCardsImages();
+
+    // sorteia uma carta laeatória para o computador
+    let computerCardId = await getRandomCardId();
+
+    // muda para "display = block" os dois elementos a seguir
+    state.fieldCards.player.style.display = "block"
+    state.fieldCards.computer.style.display = "block"
+
+    state.fieldCards.player.src = cardData[cardId].img;
+    state.fieldCards.computer.src = cardData[computerCardId].img;
+
+    let duelResults = await checkDuelResults(cardId, computerCardId)
+
+    await updateScore();
+    await drawButton(duelResults);
+}
+
+async function drawButton(text) {
+    state.actions.button.innerText = text.toUpperCase();
+    state.actions.button.style.display = "block"
+}
+
+async function updateScore() {
+    state.score.scoreBox.innerText = `Win : ${state.score.playerScore} | Lose : ${state.score.computerScore}`;
+}
+
+async function checkDuelResults(playerCardId, computerCardId) {
+
+    // início da variável em estado "neutro"
+    let duelResults = "DRAW"
+
+    // variável armazena a carta do player
+    let playerCard = cardData[playerCardId];
+
+    if (playerCard.WinOf.includes(computerCardId)) {
+        duelResults = "WIN";
+        state.score.playerScore++;
+    }
+
+    if (playerCard.LoseOf.includes(computerCardId)) {
+        duelResults = "LOSE"
+        state.score.computerScore++
+    }
+
+    // o áudio será chamado a depender do resultado
+    await playAudio(duelResults)
+
+    return duelResults
+}
+
+async function removeAllCardsImages() {
+
+    // desestruturação: os dois elementos de "state.playerSides" estão sendo pegos e salvos em variáveis locais
+    let { computerBOX, player1BOX } = state.playerSides;
+    let imgElements = computerBOX.querySelectorAll("img");
+    imgElements.forEach((img) => img.remove());
+
+    imgElements = player1BOX.querySelectorAll("img");
+    imgElements.forEach((img) => img.remove());
 }
 
 async function drawSelectCard(index) {
@@ -112,10 +176,30 @@ async function drawCards(cardNumbers, fieldSide) {
     }
 }
 
+// função com oobjetivo de resetar algumas configurações para iniciar uma nova partida. Se atualizar a página, as informações de vitórias e derrotas até então serão perdidas
+async function resetDuel() {
+    // esvazia a carta mostrada à esquerda
+    state.cardSprites.avatar.src = ""
+    state.actions.button.style.display = "none"
+
+    state.fieldCards.player.style.display = "none"
+    state.fieldCards.computer.style.display = "none"
+
+    init();
+}
+
+async function playAudio(status) {
+    const audio = new Audio(`./src/assets/audios/${status}.wav`)
+
+    try {
+        audio.play()
+    } catch{};
+}
+
 // Função principal que chamará outras funções e criará os estados de determinado jogo
 function init() {
-    drawCards(5, playerSides.player1);
-    drawCards(5, playerSides.computer);
+    drawCards(5, state.playerSides.player1);
+    drawCards(5, state.playerSides.computer);
 }
 
 // primeira função que será chamada sempre. Ela chama o estado inicial do jogo
