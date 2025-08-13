@@ -1,9 +1,10 @@
 # Yu-Gi-Oh | Jo-ken-po Edition
 
-Jogo de jokenpo que criei para explicar conceitos de lógica de programação aplicados a jogos
+Jogo de jokenpo construído do zero por tutor da DIO no bootcamp Santander 2025
 
 conceitos abordados:
 
 - Armazenamento e gerenciamento de estado manual
 - Funções limpas
 - Organização de código
+
