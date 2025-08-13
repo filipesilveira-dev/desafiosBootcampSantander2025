@@ -95,6 +95,7 @@ async function createCardImage(IdCard, fieldSide) {
     return cardImage;
 }
 
+// técnica Extract to Method: essa função possui o objetivo de chamar outras funções. Tudo que estava contido nela que não fosse uma função foi agrupado, com base em seus objetivos (mostrar cartas no campo, esconder detalhes, etc) em uma e chamado enquanto função aqui. Isso facilita a vizualização e a manutenção do código.
 async function setCardsField(cardId) {
 
     // remove todas as cartas antes
@@ -103,17 +104,27 @@ async function setCardsField(cardId) {
     // sorteia uma carta laeatória para o computador
     let computerCardId = await getRandomCardId();
 
-    // muda para "display = block" os dois elementos a seguir
-    state.fieldCards.player.style.display = "block"
-    state.fieldCards.computer.style.display = "block"
+    await showHiddenCardFieldsImages(true);
 
-    state.fieldCards.player.src = cardData[cardId].img;
-    state.fieldCards.computer.src = cardData[computerCardId].img;
+    await hiddenCardDetails();
+
+    await drawCardsInField(cardId, computerCardId);
 
     let duelResults = await checkDuelResults(cardId, computerCardId)
 
     await updateScore();
     await drawButton(duelResults);
+}
+
+async function drawCardsInField(cardId, computerCardId) {
+    state.fieldCards.player.src = cardData[cardId].img;
+    state.fieldCards.computer.src = cardData[computerCardId].img;
+}
+
+async function hiddenCardDetails() {
+    state.cardSprites.avatar.src = " ";
+    state.cardSprites.name.innerText = " ";
+    state.cardSprites.type.innerText = " ";
 }
 
 async function drawButton(text) {
@@ -123,6 +134,19 @@ async function drawButton(text) {
 
 async function updateScore() {
     state.score.scoreBox.innerText = `Win : ${state.score.playerScore} | Lose : ${state.score.computerScore}`;
+}
+
+async function showHiddenCardFieldsImages(value) {
+    if (value === true) {
+        // muda para "display = block" os dois elementos a seguir
+        state.fieldCards.player.style.display = "block"
+        state.fieldCards.computer.style.display = "block"
+    }
+
+    if (value === false) {
+        state.fieldCards.player.style.display = "none";
+        state.fieldCards.computer.style.display = "none";
+    }
 }
 
 async function checkDuelResults(playerCardId, computerCardId) {
@@ -193,14 +217,20 @@ async function playAudio(status) {
 
     try {
         audio.play()
-    } catch{};
+    } catch { };
 }
 
 // Função principal que chamará outras funções e criará os estados de determinado jogo
 function init() {
+    showHiddenCardFieldsImages(false)
+
     drawCards(5, state.playerSides.player1);
     drawCards(5, state.playerSides.computer);
+
+    // não está sendo executado ao iniciar a página por conta de política de segurança de navegadores. Só iniciam após a primeira interação do usuário com a página
+    const bgm = document.getElementById("bgm");
+    bgm.play();
 }
 
 // primeira função que será chamada sempre. Ela chama o estado inicial do jogo
-init()
+init();

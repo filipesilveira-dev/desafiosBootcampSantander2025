@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+body{
+    /* cria um cursor personalizado */
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button, a, img:hover, button:hover,a:hover{
+    /* adiciona uma mudança automática da imagem do cursor nos elementos e estados de elementos */
+    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
+
 .bg-video {
     /* permite manipular o vídeo */
     position: absolute;
@@ -92,11 +103,13 @@
 }
 
 .card-versus__container {
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-content: center;
     padding-top: 0.1rem;
-    height: 300px;
+    height: 17rem;
 }
 
 .versus-top,
@@ -126,13 +139,19 @@
 .card-infield {
     height: 11.2rem;
     width: 8rem;
+    border: 1px solid #fff;
     border-radius: 8px;
 }
 
-.card{
+.card {
     transition: transform .2s;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(1.2);
+}
+
+/* classe criada para realizar ajustes. Todo elemento que estiver com essa classe receberá uma borda vermelha para facilitar sua vizualização */
+.debug {
+    border: 1px solid red;
 }
